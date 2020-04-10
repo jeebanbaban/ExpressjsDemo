@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>{{ title }}</title>
+    </head>
+
+    <body>
+        <h1>{{ title }}</h1>
+        <p>{{ title }}</p>
+
+        <form method="POST">
+            <input type="text" name="username" value="{{user.username}}"><br>
+            {% if(error.username) %}
+            <p> {{error.username.msg}}</p>
+            {% endif %}
+        
+            <input type="password" name="password" value="{{user.password}}"><br>
+             {% if(error.password) %}
+            <p> {{error.password.msg}}</p>
+            {% endif %}
+
+            <input type="password" name="cnfpassword" value="{{user.cnfpassword}}"><br>
+             {% if(error.cnfpassword) %}
+            <p> {{error.cnfpassword.msg}}</p>
+            {% endif %}
+            
+            <button type="submit" name="submit" value="Submit"></button>
+        </form>
+
+    </body>
+</html>
